@@ -1,15 +1,14 @@
-import {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function LoginModal({ setLoginModalOpen, id, title, content, writer }) {
 
+    const [Email, SetEmail] = useState("");
+    const [Password, SetPassword] = useState("");
+
     function closeModal() {
         setLoginModalOpen(false);
     };
-
-
-    const [Email, SetEmail] = useState("");
-    const [Password, SetPassword] = useState("");
 
     function EmailHandler(e) {
         e.preventDefault();
@@ -28,13 +27,17 @@ function LoginModal({ setLoginModalOpen, id, title, content, writer }) {
             'memberEmail' : Email,
             'memberPwd' : Password
         };
-        const config = { "Content-Type" : "application/json" };
         axios.post(url, data)
             .then(res => {
                 if (res.headers['authorization'] != null) {
-                    localStorage.setItem("token", res.headers['authorization']);
-                    alert(res.data['data']['memberNickname'] + "님 반갑습니다.");
-                    window.location.replace("/");
+                    const token = res.headers['authorization'];
+                    localStorage.setItem("token", token);
+                    localStorage.setItem("memberNo", res.data['data']['memberNo']);
+                    localStorage.setItem("memberEmail", res.data['data']['memberEmail']);
+                    localStorage.setItem("memberName", res.data['data']['memberName']);
+                    localStorage.setItem("memberNickname", res.data['data']['memberNickname']);
+                    alert(localStorage.getItem("memberNickname") + "님 반갑습니다.");
+                    window.location.reload();
                 } else {
                     alert("아이디, 비밀번호를 확인해주세요.");
                 }

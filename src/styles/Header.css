@@ -1,18 +1,18 @@
 
 .Header { height: 150px; width: 100%; background-color: #fff8ee; display: flex; }
 
-.Header_Center { height: 100%; width: 60%; /* background-color: #12347d; */ position: relative; font-size: calc(10px + 2vh); color: black; }
-.Header_Center .Logo { height : 60%; width : 100%; position: absolute; text-align: center; }
-.Header_Center .Menu { height : 40%; width : 100%; position: absolute; display: flex; top: 60%; }
-.Header_Center .Menu .Inner { height : 100%; width : calc(100% / 3); /* background-color: red; */ text-align: center; font-size: calc(5px + 2vh); }
+.Menu { height: 100%; width: 60%; /* background-color: #12347d; */ position: relative; font-size: calc(10px + 2vh); color: black; }
+.Menu .Logo { height : 60%; width : 100%; position: absolute; text-align: center; }
+.Menu .MenuList { height : 40%; width : 100%; position: absolute; display: flex; top: 60%; }
+.Menu .MenuList .Inner { height : 100%; width : calc(100% / 3); /* background-color: red; */ text-align: center; font-size: calc(5px + 2vh); }
 
 .Header_Left { height: 100%; width: 20%; /* background-color: #ef2eff; */ position: relative; font-size: calc(10px + 2vh); color: black; }
 .Header_Left .Text { height : 50px; width : 200px; position: absolute; top: 50%; left: 50%; margin: -25px 0 0 -100px; }
 
-.Header_Right { height: 100%; min-width: 200px; width: 20%; /* background-color: #61dafb; */ }
-.Header_Right ul { list-style: none; }
-.Header_Right li { float: left; }
-.Header_Right li:not(:first-child)::before { content: ""; display: inline-block; width: 1px; height: 12px; background-color: #d3d5d7; margin: 4px 12px 0; }
+.UserInfo { height: 100%; min-width: 200px; width: 20%; /* background-color: #61dafb; */ }
+.UserInfo ul { list-style: none; }
+.UserInfo li { float: left; }
+.UserInfo li:not(:first-child)::before { content: ""; display: inline-block; width: 1px; height: 12px; background-color: #d3d5d7; margin: 4px 12px 0; }
 
 .LoginModal { width:300px; height:300px; z-index:999; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: aliceblue; border: 1px solid black; }
 .LoginModal .Close { position:absolute; right:10px; top: 10px; }
