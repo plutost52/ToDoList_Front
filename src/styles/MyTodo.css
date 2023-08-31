@@ -1,0 +1,4 @@
+
+.MyTodoMenu { width: calc(100% - 400px); height: 100px; margin-left : 200px; margin-right : 200px;}
+.MyTodoMenu ul { width: 300px; list-style: none; float: right; padding-left: 0px; }
+.MyTodoMenu li { margin-left:20px; float: left; }
