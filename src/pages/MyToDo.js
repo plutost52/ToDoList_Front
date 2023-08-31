@@ -1,6 +1,7 @@
 
 import React, {useCallback, useState} from "react";
 import CardList from "../components/card/CardList";
+import CardEdit from "../components/card/CardEdit";
 import MyTodoMenu from "../components/MyTodo/MyTodoMenu";
 
 function MyToDo() {
@@ -21,6 +22,7 @@ function MyToDo() {
         <div className="MyTodo">
             <MyTodoMenu checkedList={checkedList}></MyTodoMenu>
             <CardList onCheckedItem={onCheckedItem}></CardList>
+            <CardEdit></CardEdit>
         </div>
     )
 
