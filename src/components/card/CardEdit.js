@@ -7,16 +7,24 @@ function CardEdit(props) {
     return(
         <div className = "CardEdit">
             <div className="Title">
-                <input type="text">{props.title}</input>
+                <input type="text" defaultValue={props.content.title}/>
             </div>
             <div className="CreatedTime">
-                {Moment(props.createTime).format("YYYY-MM-DD")}
+                {props.content.createTime != null && Moment(props.content.createTime).format("YYYY-MM-DD")}
             </div>
             <div className="CardLines">
-                { props.lines != null && props.lines.map((line, index) => {
+                { props.content.lines != null && props.content.lines.map((line, index) => {
                     return(
-                        <div key={line.cardLineNo}>
-                            {line.cardLineValue}
+                        <div className="CardLine" key={line.cardLineNo}>
+                            <div className="CheckBox">
+                                <input type="checkbox"></input>
+                            </div>
+                            <div className="Text">
+                                {line.cardLineValue}
+                            </div>
+                            <div className="Delete">
+                                X
+                            </div>
                         </div>
                     )
                 })}

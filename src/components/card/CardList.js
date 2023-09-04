@@ -28,6 +28,7 @@ function CardList(props) {
                 return (
                     <Card
                         onCheckedItem={props.onCheckedItem}
+                        setContent={props.setContent}
                         key={index}
                         cardNo={card.cardNo}
                         title={card.cardTitle}

@@ -2,7 +2,7 @@
 .CardList { margin-left: 200px; width: calc(100% - 700px); height: 100%; display: flex; float: left; }
 .CardList .Card { width: 200px; height: 300px; margin-left:50px; }
 .CardList .Card input[type="checkbox"] { float: left }
-.CardList .Card .CardInner { position: relative; width: 175px; height: 100%; margin-left:25px; border-radius: 10px 10px 10px 10px; }
+.CardList .Card .CardInner { cursor: pointer; position: relative; width: 175px; height: 100%; margin-left:25px; border-radius: 10px 10px 10px 10px; }
 .CardList .Card .CardInner.Done { border: 1px solid black; }
 .CardList .Card .CardInner.Undone { border: 1px solid gray; background-color: #E2E2E2; }
 .CardList .Card .CardInner .Title { width: 165px; height: 30px; text-align: left; padding: 10px 0 0 10px; }
@@ -17,6 +17,10 @@
 .CardEdit .CardLines { width: 100%; height: 300px; background-color: blanchedalmond; }
 .CardEdit .CardLineInput { width: 100%; height: 35px;}
 .CardEdit .CardLineInput input { width: 90%; height: 15px; float:left; margin : 10px 0 0 10px; }
+.CardEdit .CardLine { width: 100%; height: 20px; float:left; margin-top: 10px; }
+.CardEdit .CardLine .CheckBox { width: 10%; height: 20px; float:left; }
+.CardEdit .CardLine .Text { width: 80%; height: 16px; float:left; margin-top: 2px; font-size: 13px; text-align: left; }
+.CardEdit .CardLine .Delete { width: 10%; height: 20px; float:left; cursor: pointer; }
 .CardEdit .Menu { width: calc(100% - 10px); height: 35px; padding: 5px 10px 0 0; }
 .CardEdit .Menu button { float:right; }
 .CardEdit .SharedList { width: 100%; height: 150px; background-color: blanchedalmond; }

@@ -18,11 +18,15 @@ function MyToDo() {
         [checkedList]
     );
 
+    const [content, setContent] = useState({
+        cardNo: '', title: '', lines: null, createTime: null
+    });
+
     return(
         <div className="MyTodo">
             <MyTodoMenu checkedList={checkedList}></MyTodoMenu>
-            <CardList onCheckedItem={onCheckedItem}></CardList>
-            <CardEdit></CardEdit>
+            <CardList onCheckedItem={onCheckedItem} setContent={setContent}></CardList>
+            <CardEdit content={content}></CardEdit>
         </div>
     )
 
