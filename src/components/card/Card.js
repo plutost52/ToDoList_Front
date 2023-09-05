@@ -5,21 +5,12 @@ import Moment from 'moment';
 
 function Card(props) {
 
-    function changeContents() {
-        props.setContent( {
-            cardNo: props.cardNo,
-            title: props.title,
-            lines: props.lines,
-            createTime: props.createTime
-        });
-    }
-
     return(
         <div className = "Card">
             <input type="checkbox" id={props.cardNo} onChange={(e) => {
               props.onCheckedItem(e.target.checked, e.target.id);
             }} />
-            <div className={ props.done ? "CardInner Done" : "CardInner Undone"} onClick={changeContents}>
+            <div className={ props.done ? "CardInner Done" : "CardInner Undone"} onClick={(e) => props.getCardDetails(props.cardNo)}>
                 <div className="Title">
                     <span>{props.title}</span>
                 </div>

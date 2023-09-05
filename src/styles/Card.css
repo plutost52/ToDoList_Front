@@ -1,5 +1,5 @@
 
-.CardList { margin-left: 200px; width: calc(100% - 700px); height: 100%; display: flex; float: left; }
+.CardList { margin-left: 200px; width: calc(100% - 700px); height: 100%; min-height: 700px; display: flex; float: left; }
 .CardList .Card { width: 200px; height: 300px; margin-left:50px; }
 .CardList .Card input[type="checkbox"] { float: left }
 .CardList .Card .CardInner { cursor: pointer; position: relative; width: 175px; height: 100%; margin-left:25px; border-radius: 10px 10px 10px 10px; }
@@ -14,7 +14,7 @@
 .CardEdit .Title { width: 100%; height: 35px;}
 .CardEdit .Title input { width: 90%; height: 15px; float:left; margin : 10px 0 0 10px; }
 .CardEdit .CreatedTime { width: calc(100% - 15px); height: 15px; font-size: 13px; text-align: right; padding-right: 15px; margin-bottom: 10px; }
-.CardEdit .CardLines { width: 100%; height: 300px; background-color: blanchedalmond; }
+.CardEdit .CardLines { width: 100%; height: 300px; }
 .CardEdit .CardLineInput { width: 100%; height: 35px;}
 .CardEdit .CardLineInput input { width: 90%; height: 15px; float:left; margin : 10px 0 0 10px; }
 .CardEdit .CardLine { width: 100%; height: 20px; float:left; margin-top: 10px; }

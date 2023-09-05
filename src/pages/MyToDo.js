@@ -3,6 +3,7 @@ import React, {useCallback, useState} from "react";
 import CardList from "../components/card/CardList";
 import CardEdit from "../components/card/CardEdit";
 import MyTodoMenu from "../components/MyTodo/MyTodoMenu";
+import axios from "axios";
 
 function MyToDo() {
 
@@ -18,15 +19,25 @@ function MyToDo() {
         [checkedList]
     );
 
-    const [content, setContent] = useState({
-        cardNo: '', title: '', lines: null, createTime: null
-    });
+    const [cardEditValue, setCardEditValue] = useState();
+    const getCardDetails = (cardNo) => {
+        const url = "http://localhost:8080/card/" + cardNo;
+        const config = { headers : {
+                Authorization: localStorage.getItem("token")
+            } };
+        axios.get(url, config)
+            .then(res => {
+                setCardEditValue(res.data.data);
+            }).catch(err => {
+
+            });
+    }
 
     return(
         <div className="MyTodo">
             <MyTodoMenu checkedList={checkedList}></MyTodoMenu>
-            <CardList onCheckedItem={onCheckedItem} setContent={setContent}></CardList>
-            <CardEdit content={content}></CardEdit>
+            <CardList onCheckedItem={onCheckedItem} getCardDetails={getCardDetails}></CardList>
+            <CardEdit content={cardEditValue} getCardDetails={getCardDetails}></CardEdit>
         </div>
     )
 
